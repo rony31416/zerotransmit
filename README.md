@@ -35,6 +35,7 @@ DATABASE_URL=postgresql://postgres:password@localhost/zerotransmit
 SECRET_KEY=zerotransmit-super-secret-key-2025
 REDIS_URL=redis://localhost:6379
 GEMINI_API_KEY=your_gemini_api_key
+GROQ_API_KEY=your_groq_api_key
 ```
 
 `frontend/.env.local`
