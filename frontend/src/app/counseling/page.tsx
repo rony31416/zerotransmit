@@ -15,7 +15,7 @@ export default function CounselingPage() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'counselor',
-      content: 'Hello, I\'m here to provide emotional support and guidance. How are you feeling today?',
+      content: 'হ্যালো, আমি আপনাকে মানসিক সহায়তা এবং নির্দেশনা দিতে এখানে আছি। আপনি আজকে কেমন বোধ করছেন?',
       timestamp: new Date(),
     },
   ]);
@@ -74,8 +74,8 @@ export default function CounselingPage() {
         const escalationMessage: Message = {
           role: 'counselor',
           content: response.mood === 'crisis' 
-            ? '⚠️ URGENT: Please call the crisis hotline immediately at 16789. A counselor is standing by.'
-            : 'Would you like to speak with a human counselor? They can provide more personalized support.',
+            ? '⚠️ খুব জরুরি: অনুগ্রহ করে এখনই 16789 নম্বরে কল করুন। একজন কল রিসিভ করবেন।'
+            : 'আপনি কি একজন মানুষের সাথে কথা বলতে চান? তারা আপনাকে আরও ভালোভাবে সাহায্য করতে পারবে।',
           mood: response.mood,
           timestamp: new Date(),
         };
@@ -84,7 +84,7 @@ export default function CounselingPage() {
     } catch (error) {
       const errorMessage: Message = {
         role: 'counselor',
-        content: 'I\'m here for you. Please try again or call the helpline at 16789.',
+        content: 'আমি আপনার সাথে আছি। অনুগ্রহ করে আবার চেষ্টা করুন বা 16789 নম্বরে কল করুন।',
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);
@@ -98,9 +98,9 @@ export default function CounselingPage() {
       <div className="text-center space-y-4 pt-8">
         <div className="text-6xl mb-4">🧠</div>
         <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
-          Mental Health Counseling
+          মানসিক স্বাস্থ্য কাউন্সেলিং
         </h1>
-        <p className="text-xl text-gray-600">CBT-based support for emotional wellbeing</p>
+        <p className="text-xl text-gray-600">আবেগজনিত সুস্থতার জন্য সমর্থন</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -108,9 +108,9 @@ export default function CounselingPage() {
           <CardHeader className="bg-gradient-to-r from-purple-50 to-violet-50 border-b-2 border-gray-200">
             <CardTitle className="text-2xl text-gray-800 flex items-center gap-3">
               <span className="text-3xl">💜</span>
-              Counseling Session
+              কাউন্সেলিং সেশন
             </CardTitle>
-            <p className="text-sm text-gray-600 mt-1">Confidential emotional support</p>
+            <p className="text-sm text-gray-600 mt-1">গোপনীয় মানসিক সহায়তা</p>
           </CardHeader>
 
           <CardContent className="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50">
@@ -166,7 +166,7 @@ export default function CounselingPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Share how you're feeling..."
+                placeholder="আপনার অনুভূতি শেয়ার করুন..."
                 className="flex-1 px-5 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none text-lg"
                 disabled={loading}
               />
@@ -185,12 +185,12 @@ export default function CounselingPage() {
           <Card className="border-2 border-purple-200 bg-purple-50">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="text-lg text-purple-900">💊 Medication Tips</CardTitle>
+                <CardTitle className="text-lg text-purple-900">💊 ওষুধ খাওয়ার টিপস</CardTitle>
                 <button
                   onClick={() => setShowTips(!showTips)}
                   className="text-sm text-purple-600 hover:text-purple-700 font-semibold"
                 >
-                  {showTips ? 'Hide' : 'Show'}
+                  {showTips ? 'লুকান' : 'দেখান'}
                 </button>
               </div>
             </CardHeader>
@@ -212,39 +212,39 @@ export default function CounselingPage() {
             <CardHeader>
               <CardTitle className="text-lg text-red-900 flex items-center gap-2">
                 <span className="text-2xl">🆘</span>
-                Crisis Support
+                জরুরী সহায়তা
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3 text-sm text-red-800">
-                <p className="font-bold text-lg">If you're in crisis:</p>
+                <p className="font-bold text-lg">যদি আপনি খুব কষ্টে থাকেন:</p>
                 <div className="bg-white border-2 border-red-200 p-4 rounded-xl">
                   <p className="font-bold text-2xl text-red-600 mb-1">16789</p>
-                  <p className="text-red-700">(Kaan Pete Roi)</p>
+                  <p className="text-red-700">(কান পেতে রই)</p>
                 </div>
-                <p className="font-semibold">🚨 24/7 Professional Support</p>
-                <p className="italic">You are not alone. Help is available.</p>
+                <p className="font-semibold">🚨 24/7 প্রফেশনাল সাপোর্ট</p>
+                <p className="italic">আপনি একা নন। সাহায্য সবসময় আছে।</p>
               </div>
             </CardContent>
           </Card>
 
           <Card className="border-2 border-teal-200 bg-teal-50">
             <CardHeader>
-              <CardTitle className="text-lg text-teal-900">📚 Resources</CardTitle>
+              <CardTitle className="text-lg text-teal-900">📚 প্রয়োজনীয় তথ্য</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3 text-sm text-teal-800">
                 <p className="flex items-center gap-2">
                   <span className="text-xl">🏥</span>
-                  Free ART at all govt hospitals
+                  সব সরকারি হাসপাতালে বিনামূল্যে চিকিৎসা (ART)
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="text-xl">🤝</span>
-                  Support groups available
+                  সাপোর্ট গ্রুপ
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="text-xl">📖</span>
-                  Educational materials in Bangla
+                  বাংলায় শিক্ষামূলক উপাদান
                 </p>
               </div>
             </CardContent>
@@ -255,7 +255,7 @@ export default function CounselingPage() {
       <div className="text-center bg-gradient-to-r from-purple-50 to-violet-50 border-2 border-purple-200 rounded-2xl p-6">
         <p className="text-purple-900 font-semibold flex items-center justify-center gap-2">
           <span className="text-2xl">🔒</span>
-          All conversations are completely confidential and encrypted
+          সমস্ত কথোপকথন সম্পূর্ণ গোপনীয় এবং সুরক্ষিত
         </p>
       </div>
     </div>
